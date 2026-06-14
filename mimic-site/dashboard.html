@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KUCCPS Mimic - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --deep-maroon: #800000;
+        --dark-slate: #2d3748;
+        --nav-grey: #2d3748;
+        --page-grey: #e8edf2;
+        --panel-grey: #f8fafc;
+        --gold: #f8c66c;
+      }
+      body { background: var(--page-grey); }
+    </style>
+  </head>
+  <body class="min-h-screen text-slate-800">
+    <header>
+      <div class="bg-[var(--deep-maroon)]">
+        <div class="max-w-7xl mx-auto flex items-stretch">
+          <div class="bg-white flex items-center gap-4 px-4 py-3">
+            <img src="assets/logo-kuccps.png" alt="KUCCPS" class="h-12" />
+          </div>
+          <div class="flex-1 bg-[var(--deep-maroon)] px-4 py-3 flex items-center justify-end gap-3">
+            <span class="text-xl">🇰🇪</span>
+            <span class="text-white text-sm font-semibold">2025092000012417</span>
+          </div>
+        </div>
+      </div>
+      <nav class="bg-[var(--nav-grey)] text-white">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center gap-4 px-4 py-3 text-sm">
+          <a href="#" class="border-b-4 border-[var(--deep-maroon)] pb-2 text-white font-semibold">Dashboard</a>
+          <a href="#" class="hover:text-white/80">Institutions</a>
+          <a href="#" class="hover:text-white/80">All Programmes</a>
+          <a href="#" class="hover:text-white/80">KMTC Programmes</a>
+          <a href="#" class="hover:text-white/80">Apply/Revise</a>
+          <a href="#" class="hover:text-white/80">Course Basket</a>
+          <a href="#" class="hover:text-white/80">Transfer Application</a>
+          <a href="#" class="hover:text-white/80">Student Resources</a>
+          <a href="#" class="hover:text-white/80">Student Funding</a>
+          <a href="#" class="hover:text-white/80">FAQs</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="w-full px-4 py-6">
+      <div class="bg-white rounded shadow border border-slate-200 p-6 mb-6">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+          <div class="space-y-4">
+            <h1 class="text-2xl font-semibold tracking-wide text-[var(--dark-slate)]">Secondary School Results</h1>
+            <div class="flex flex-wrap items-center gap-3">
+              <button id="overview-button" class="dashboard-action-button px-5 py-3 bg-[var(--deep-maroon)] text-white rounded">Overview</button>
+              <button id="placements-button" class="dashboard-action-button px-5 py-3 bg-[var(--deep-maroon)] text-white rounded">Placements</button>
+              <button id="kcse-results-button" class="dashboard-action-button px-5 py-3 bg-[var(--gold)] text-[var(--dark-slate)] rounded border border-[var(--gold)]">KCSE Results</button>
+              <button id="application-history-button" class="dashboard-action-button px-5 py-3 bg-[var(--deep-maroon)] text-white rounded">Application History</button>
+            </div>
+          </div>
+          <div class="ml-auto flex items-center gap-6">
+            <div class="text-slate-700 flex items-center gap-2 text-sm">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--panel-grey)] text-[#2d6bc6]">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+              </span>
+              <span class="font-semibold text-[#2d6bc6]">Account</span>
+            </div>
+            <div class="text-slate-700 flex items-center gap-2 text-sm">
+              <span class="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--panel-grey)] text-[#2d6bc6]">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 7h10l1.5 4.5H5.5L7 7zm0 2L5.5 11.5A1.5 1.5 0 0 0 7 14h10a1.5 1.5 0 0 0 1.5-2.5L17 9H7zM6 17a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm12 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                </svg>
+                <span class="absolute -top-1 -right-1 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-[#10b981] text-[0.65rem] font-bold text-white">3</span>
+              </span>
+              <span class="font-semibold text-[#2d6bc6]">Basket</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="page-content" class="bg-[#2d3e50] rounded shadow border border-slate-200 w-full max-w-full p-[30px] text-white">
+        <div class="space-y-6">
+          <div class="flex flex-col gap-6">
+            <div>
+              <div class="text-xs uppercase tracking-[0.3em] text-slate-300">KCSE RESULTS</div>
+              <div class="mt-2 text-xl font-semibold uppercase tracking-[0.2em] text-white">Secondary School Results</div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 rounded bg-white/5 p-4 text-center text-slate-200">
+              <div>
+                <div class="text-xs uppercase tracking-[0.2em] text-[#f39c12]">Mean Grade</div>
+                <div class="mt-3 text-4xl font-bold">A-</div>
+              </div>
+              <div>
+                <div class="text-xs uppercase tracking-[0.2em] text-[#f39c12]">AGP</div>
+                <div class="mt-3 text-4xl font-bold">75</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-nowrap items-center gap-8 overflow-x-auto pb-2">
+            <div class="flex-shrink-0 text-center min-w-[110px]">
+              <div class="text-xs uppercase tracking-[0.2em] text-[#f39c12]">101 ENG</div>
+              <div class="mt-2 text-3xl font-bold text-white">A</div>
+            </div>
+            <div class="flex-shrink-0 text-center min-w-[110px]">
+              <div class="text-xs uppercase tracking-[0.2em] text-[#f39c12]">102 KIS</div>
+              <div class="mt-2 text-3xl font-bold text-white">A-</div>
+            </div>
+            <div class="flex-shrink-0 text-center min-w-[110px]">
+              <div class="text-xs uppercase tracking-[0.2em] text-[#f39c12]">121 MAT A</div>
+              <div class="mt-2 text-3xl font-bold text-white">B+</div>
+            </div>
+            <div class="flex-shrink-0 text-center min-w-[110px]">
+              <div class="text-xs uppercase tracking-[0.2em] text-[#f39c12]">231 BIO</div>
+              <div class="mt-2 text-3xl font-bold text-white">A-</div>
+            </div>
+            <div class="flex-shrink-0 text-center min-w-[110px]">
+              <div class="text-xs uppercase tracking-[0.2em] text-[#f39c12]">232 PHY</div>
+              <div class="mt-2 text-3xl font-bold text-white">B</div>
+            </div>
+            <div class="flex-shrink-0 text-center min-w-[110px]">
+              <div class="text-xs uppercase tracking-[0.2em] text-[#f39c12]">233 CHE</div>
+              <div class="mt-2 text-3xl font-bold text-white">B-</div>
+            </div>
+            <div class="flex-shrink-0 text-center min-w-[110px]">
+              <div class="text-xs uppercase tracking-[0.2em] text-[#f39c12]">312 GEO</div>
+              <div class="mt-2 text-3xl font-bold text-white">B+</div>
+            </div>
+            <div class="flex-shrink-0 text-center min-w-[110px]">
+              <div class="text-xs uppercase tracking-[0.2em] text-[#f39c12]">451 CMP</div>
+              <div class="mt-2 text-3xl font-bold text-white">A</div>
+            </div>
+          </div>
+
+          <div class="mt-6 text-center uppercase tracking-[0.2em] text-slate-300 text-sm">NO KCSE BRIDGING</div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="fixed bottom-0 left-0 right-0 bg-[var(--dark-slate)] text-white py-3">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 px-4 text-xs md:text-sm">
+        <div>Application deadline in: <span id="app-deadline"></span></div>
+        <div>Transfer deadline in: <span id="transfer-deadline"></span></div>
+        <div>Copyright © 2026 | KUCCPS | All Rights Reserved</div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
